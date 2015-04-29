@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 28, 2015 at 06:59 AM
+-- Generation Time: Apr 29, 2015 at 09:28 PM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `attribute_sets` (
   `strength` int(11) NOT NULL,
   `dodge_chance` int(11) NOT NULL,
   `level` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=66 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=109 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `attribute_sets`
@@ -72,7 +72,7 @@ INSERT INTO `attribute_sets` (`attributes_id`, `player_id`, `monster_id`, `hit_p
 (51, NULL, 21, 0, 6, 10, 2, 2),
 (52, NULL, 22, 0, 9, 15, 3, 3),
 (53, NULL, 23, 0, 9, 15, 3, 3),
-(54, 6, NULL, 100, 2, 19, 6, 3),
+(54, 6, NULL, 100, 5, 27, 12, 4),
 (55, NULL, 24, 0, 3, 5, 1, 1),
 (56, NULL, 25, 0, 6, 10, 2, 2),
 (57, NULL, 26, 0, 9, 15, 3, 3),
@@ -81,9 +81,52 @@ INSERT INTO `attribute_sets` (`attributes_id`, `player_id`, `monster_id`, `hit_p
 (60, NULL, 28, 0, 6, 10, 2, 2),
 (61, NULL, 29, 0, 9, 15, 3, 3),
 (62, NULL, 30, 0, 9, 15, 3, 3),
-(63, 8, NULL, 100, 1, 6, 3, 1),
+(63, 8, NULL, 100, 10, 14, 12, 3),
 (64, 9, NULL, 100, 5, 10, 3, 2),
-(65, NULL, 31, 0, 3, 5, 1, 1);
+(65, NULL, 31, 0, 3, 5, 1, 1),
+(66, NULL, 32, 0, 3, 5, 1, 1),
+(67, NULL, 33, 0, 6, 10, 2, 2),
+(68, NULL, 34, 40, 6, 10, 2, 2),
+(69, NULL, 35, 0, 9, 15, 3, 3),
+(70, NULL, 36, 0, 9, 15, 3, 3),
+(71, 10, NULL, 100, 13, 6, 13, 3),
+(72, NULL, 37, 0, 3, 5, 1, 1),
+(73, NULL, 38, 40, 6, 10, 2, 2),
+(74, NULL, 39, 0, 6, 10, 2, 2),
+(75, NULL, 40, 60, 9, 15, 3, 3),
+(76, NULL, 41, 0, 9, 15, 3, 3),
+(77, NULL, 42, 60, 9, 15, 3, 3),
+(78, NULL, 43, 0, 12, 20, 4, 4),
+(79, 11, NULL, 0, 2, 7, 1, 1),
+(80, NULL, 44, 20, 3, 5, 1, 1),
+(81, NULL, 45, 20, 3, 5, 1, 1),
+(82, NULL, 46, 20, 3, 5, 1, 1),
+(83, NULL, 47, 20, 3, 5, 1, 1),
+(84, NULL, 48, 20, 3, 5, 1, 1),
+(85, NULL, 49, 20, 3, 5, 1, 1),
+(86, NULL, 50, 20, 3, 5, 1, 1),
+(87, NULL, 51, 20, 3, 5, 1, 1),
+(88, NULL, 52, 20, 3, 5, 1, 1),
+(89, NULL, 53, 20, 3, 5, 1, 1),
+(90, NULL, 54, 20, 3, 5, 1, 1),
+(91, NULL, 55, 20, 3, 5, 1, 1),
+(92, NULL, 56, 20, 3, 5, 1, 1),
+(93, NULL, 57, 20, 3, 5, 1, 1),
+(94, NULL, 58, 20, 3, 5, 1, 1),
+(95, NULL, 59, 20, 3, 5, 1, 1),
+(96, NULL, 60, 20, 3, 5, 1, 1),
+(97, NULL, 61, 20, 3, 5, 1, 1),
+(98, NULL, 62, 20, 3, 5, 1, 1),
+(99, NULL, 63, 20, 3, 5, 1, 1),
+(100, NULL, 64, 20, 3, 5, 1, 1),
+(101, NULL, 65, 20, 3, 5, 1, 1),
+(102, NULL, 66, 20, 3, 5, 1, 1),
+(103, NULL, 67, 20, 3, 5, 1, 1),
+(104, NULL, 68, 20, 3, 5, 1, 1),
+(105, NULL, 69, 20, 3, 5, 1, 1),
+(106, NULL, 70, 20, 3, 5, 1, 1),
+(107, NULL, 71, 20, 3, 5, 1, 1),
+(108, NULL, 72, 20, 3, 5, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -109,6 +152,7 @@ INSERT INTO `battleground` (`player_id`, `monster_id`, `equipment_reward_1`, `eq
 (1, 16, 39, 40, 200, 1),
 (1, 17, 41, 42, 300, 1),
 (1, 18, 43, 44, 300, 1),
+(1, 43, 83, 84, 400, 1),
 (2, 7, 29, 30, 100, 1),
 (2, 8, 31, 32, 200, 1),
 (2, 9, 33, 34, 300, 1),
@@ -123,11 +167,19 @@ INSERT INTO `battleground` (`player_id`, `monster_id`, `equipment_reward_1`, `eq
 (6, 24, 53, 54, 100, 1),
 (6, 25, 55, 56, 200, 1),
 (6, 26, 57, 58, 300, 1),
+(6, 36, 75, 76, 300, 1),
 (7, 27, 59, 60, 100, 1),
 (7, 28, 61, 62, 200, 1),
 (7, 29, 63, 64, 300, 1),
 (7, 30, 65, 66, 300, 1),
-(9, 31, 67, 68, 100, 1);
+(8, 32, 69, 70, 100, 1),
+(8, 33, 71, 72, 200, 1),
+(8, 35, 73, 74, 300, 1),
+(9, 31, 67, 68, 100, 1),
+(10, 37, 77, 78, 100, 1),
+(10, 39, 79, 80, 200, 1),
+(10, 41, 81, 82, 300, 1),
+(11, 72, NULL, NULL, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -149,8 +201,8 @@ CREATE TABLE IF NOT EXISTS `equipment` (
 INSERT INTO `equipment` (`equipment_id`, `part_id`, `type_id`, `used_by_player`) VALUES
 (1, 1, 2, 0),
 (2, 3, 2, 0),
-(3, 3, 2, 1),
-(3, 5, 2, 1),
+(3, 3, 2, 0),
+(3, 5, 2, 0),
 (4, 6, 3, 0),
 (5, 7, 4, 0),
 (6, 9, 3, 0),
@@ -163,8 +215,8 @@ INSERT INTO `equipment` (`equipment_id`, `part_id`, `type_id`, `used_by_player`)
 (11, 10, 3, 1),
 (11, 11, 3, 1),
 (12, 15, 4, 1),
-(13, 15, 4, 1),
-(13, 16, 4, 1),
+(13, 15, 4, 0),
+(13, 16, 4, 0),
 (14, 8, 3, 0),
 (14, 11, 3, 0),
 (15, 8, 3, 0),
@@ -177,17 +229,17 @@ INSERT INTO `equipment` (`equipment_id`, `part_id`, `type_id`, `used_by_player`)
 (24, 3, 2, 0),
 (25, 3, 2, 1),
 (25, 4, 2, 1),
-(26, 15, 4, 1),
-(26, 16, 4, 1),
+(26, 15, 4, 0),
+(26, 16, 4, 0),
 (27, 8, 3, 0),
 (27, 11, 3, 0),
 (28, 3, 2, 0),
-(29, 8, 3, 1),
-(29, 12, 3, 1),
+(29, 8, 3, 0),
+(29, 12, 3, 0),
 (30, 13, 4, 1),
 (30, 16, 4, 1),
 (31, 24, 3, 1),
-(32, 17, 2, 1),
+(32, 17, 2, 0),
 (33, 35, 3, 1),
 (33, 36, 3, 1),
 (34, 35, 3, 1),
@@ -200,13 +252,13 @@ INSERT INTO `equipment` (`equipment_id`, `part_id`, `type_id`, `used_by_player`)
 (37, 11, 3, 0),
 (38, 8, 3, 0),
 (38, 11, 3, 0),
-(39, 24, 3, 1),
+(39, 24, 3, 0),
 (40, 24, 3, 0),
 (41, 35, 3, 1),
 (41, 36, 3, 1),
 (42, 37, 4, 1),
 (42, 39, 4, 1),
-(43, 37, 4, 0),
+(43, 37, 4, 1),
 (44, 37, 4, 1),
 (44, 39, 4, 1),
 (45, 14, 4, 1),
@@ -215,43 +267,65 @@ INSERT INTO `equipment` (`equipment_id`, `part_id`, `type_id`, `used_by_player`)
 (46, 11, 3, 0),
 (47, 24, 3, 0),
 (47, 26, 3, 0),
-(48, 27, 4, 0),
-(48, 30, 4, 0),
+(48, 27, 4, 1),
+(48, 30, 4, 1),
 (49, 37, 4, 1),
 (49, 38, 4, 1),
 (49, 39, 4, 1),
-(50, 37, 4, 0),
-(50, 38, 4, 0),
+(50, 37, 4, 1),
+(50, 38, 4, 1),
 (51, 35, 3, 0),
 (52, 32, 2, 1),
 (53, 8, 3, 0),
-(54, 15, 4, 0),
-(54, 16, 4, 0),
+(54, 15, 4, 1),
+(54, 16, 4, 1),
 (55, 28, 4, 1),
 (55, 31, 4, 1),
 (56, 17, 2, 1),
 (56, 22, 2, 1),
 (56, 23, 2, 1),
-(57, 34, 2, 0),
-(58, 35, 3, 0),
-(58, 36, 3, 0),
-(59, 3, 2, 0),
-(59, 4, 2, 0),
-(59, 5, 2, 0),
+(57, 34, 2, 1),
+(58, 35, 3, 1),
+(58, 36, 3, 1),
+(59, 3, 2, 1),
+(59, 4, 2, 1),
+(59, 5, 2, 1),
 (60, 13, 4, 0),
-(61, 27, 4, 0),
-(61, 31, 4, 0),
+(61, 27, 4, 1),
+(61, 31, 4, 1),
 (62, 17, 2, 0),
 (62, 22, 2, 0),
 (62, 23, 2, 0),
 (63, 37, 4, 1),
 (63, 38, 4, 1),
-(64, 37, 4, 0),
-(65, 35, 3, 0),
-(65, 36, 3, 0),
+(64, 37, 4, 1),
+(65, 35, 3, 1),
+(65, 36, 3, 1),
 (66, 34, 2, 0),
 (67, 8, 3, 0),
-(68, 3, 2, 0);
+(68, 3, 2, 0),
+(69, 3, 2, 0),
+(70, 8, 3, 1),
+(70, 11, 3, 1),
+(71, 24, 3, 0),
+(72, 24, 3, 1),
+(72, 25, 3, 1),
+(73, 32, 2, 1),
+(73, 33, 2, 1),
+(74, 35, 3, 1),
+(75, 37, 4, 0),
+(76, 37, 4, 1),
+(76, 38, 4, 1),
+(77, 3, 2, 1),
+(78, 2, 2, 0),
+(78, 3, 2, 0),
+(79, 27, 4, 0),
+(80, 17, 2, 0),
+(81, 34, 2, 0),
+(82, 32, 2, 1),
+(83, 44, 3, 0),
+(83, 46, 3, 0),
+(84, 48, 4, 0);
 
 -- --------------------------------------------------------
 
@@ -284,7 +358,7 @@ CREATE TABLE IF NOT EXISTS `monsters` (
 `monster_id` int(11) NOT NULL,
   `monster_modifier` int(11) NOT NULL,
   `name` varchar(100) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=73 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `monsters`
@@ -353,7 +427,86 @@ INSERT INTO `monsters` (`monster_id`, `monster_modifier`, `name`) VALUES
 (30, 18, 'SandWitch of Mild Social Phobia '),
 (30, 20, 'SandWitch of Mild Social Phobia '),
 (31, 18, 'Well-Groomed SandWitch '),
-(31, 19, 'Well-Groomed SandWitch ');
+(31, 19, 'Well-Groomed SandWitch '),
+(32, 18, 'Well-Groomed SandWitch '),
+(32, 19, 'Well-Groomed SandWitch '),
+(33, 18, 'Well-Groomed SandWitch of Mild Social Phobia '),
+(33, 19, 'Well-Groomed SandWitch of Mild Social Phobia '),
+(33, 20, 'Well-Groomed SandWitch of Mild Social Phobia '),
+(34, 18, 'SandWitch of Mild Social Phobia '),
+(34, 20, 'SandWitch of Mild Social Phobia '),
+(35, 18, 'SandWitch '),
+(36, 18, 'Well-Groomed SandWitch of Mild Social Phobia '),
+(36, 19, 'Well-Groomed SandWitch of Mild Social Phobia '),
+(36, 20, 'Well-Groomed SandWitch of Mild Social Phobia '),
+(37, 18, 'SandWitch of Mild Social Phobia '),
+(37, 20, 'SandWitch of Mild Social Phobia '),
+(38, 18, 'Well-Groomed SandWitch '),
+(38, 19, 'Well-Groomed SandWitch '),
+(39, 18, 'Well-Groomed SandWitch '),
+(39, 19, 'Well-Groomed SandWitch '),
+(40, 18, 'SandWitch '),
+(41, 52, 'Moonwalking Angry Forum Guy of Smug Superiority '),
+(41, 57, 'Moonwalking Angry Forum Guy of Smug Superiority '),
+(41, 58, 'Moonwalking Angry Forum Guy of Smug Superiority '),
+(42, 52, 'Angry Forum Guy of Smug Superiority '),
+(42, 58, 'Angry Forum Guy of Smug Superiority '),
+(43, 53, 'Malnourished Database Entry'),
+(44, 18, 'Well-Groomed SandWitch'),
+(44, 19, 'Well-Groomed SandWitch'),
+(45, 18, 'Well-Groomed SandWitch'),
+(45, 19, 'Well-Groomed SandWitch'),
+(46, 18, 'SandWitch'),
+(47, 18, 'Well-Groomed SandWitch'),
+(47, 19, 'Well-Groomed SandWitch'),
+(48, 18, 'Well-Groomed SandWitch'),
+(48, 19, 'Well-Groomed SandWitch'),
+(49, 18, 'SandWitch'),
+(50, 18, 'Well-Groomed SandWitch'),
+(50, 19, 'Well-Groomed SandWitch'),
+(51, 18, 'SandWitch'),
+(52, 18, 'SandWitch of Mild Social Phobia'),
+(52, 20, 'SandWitch of Mild Social Phobia'),
+(53, 18, 'Well-Groomed SandWitch'),
+(53, 19, 'Well-Groomed SandWitch'),
+(54, 18, 'SandWitch of Mild Social Phobia'),
+(54, 20, 'SandWitch of Mild Social Phobia'),
+(55, 18, 'SandWitch'),
+(56, 18, 'SandWitch of Mild Social Phobia'),
+(56, 20, 'SandWitch of Mild Social Phobia'),
+(57, 18, 'Well-Groomed SandWitch of Mild Social Phobia'),
+(57, 19, 'Well-Groomed SandWitch of Mild Social Phobia'),
+(57, 20, 'Well-Groomed SandWitch of Mild Social Phobia'),
+(58, 18, 'SandWitch'),
+(59, 18, 'SandWitch of Mild Social Phobia'),
+(59, 20, 'SandWitch of Mild Social Phobia'),
+(60, 18, 'Well-Groomed SandWitch'),
+(60, 19, 'Well-Groomed SandWitch'),
+(61, 18, 'Well-Groomed SandWitch of Mild Social Phobia'),
+(61, 19, 'Well-Groomed SandWitch of Mild Social Phobia'),
+(61, 20, 'Well-Groomed SandWitch of Mild Social Phobia'),
+(62, 18, 'SandWitch'),
+(63, 18, 'SandWitch'),
+(64, 18, 'SandWitch'),
+(65, 18, 'Well-Groomed SandWitch of Mild Social Phobia'),
+(65, 19, 'Well-Groomed SandWitch of Mild Social Phobia'),
+(65, 20, 'Well-Groomed SandWitch of Mild Social Phobia'),
+(66, 18, 'Well-Groomed SandWitch'),
+(66, 19, 'Well-Groomed SandWitch'),
+(67, 18, 'Well-Groomed SandWitch of Mild Social Phobia'),
+(67, 19, 'Well-Groomed SandWitch of Mild Social Phobia'),
+(67, 20, 'Well-Groomed SandWitch of Mild Social Phobia'),
+(68, 18, 'Well-Groomed SandWitch of Mild Social Phobia'),
+(68, 19, 'Well-Groomed SandWitch of Mild Social Phobia'),
+(68, 20, 'Well-Groomed SandWitch of Mild Social Phobia'),
+(69, 18, 'Well-Groomed SandWitch'),
+(69, 19, 'Well-Groomed SandWitch'),
+(70, 18, 'Well-Groomed SandWitch of Mild Social Phobia'),
+(70, 19, 'Well-Groomed SandWitch of Mild Social Phobia'),
+(70, 20, 'Well-Groomed SandWitch of Mild Social Phobia'),
+(71, 18, 'SandWitch of Mild Social Phobia'),
+(71, 20, 'SandWitch of Mild Social Phobia'),
+(72, 50, 'Ted');
 
 -- --------------------------------------------------------
 
@@ -370,7 +523,7 @@ CREATE TABLE IF NOT EXISTS `parts` (
   `stat_modifier` int(11) NOT NULL,
   `rarity` int(11) NOT NULL,
   `level_required` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `parts`
@@ -380,7 +533,7 @@ INSERT INTO `parts` (`part_id`, `type_id`, `name_modifier`, `name_position`, `st
 (1, 2, 'N/A', 1, 'Strength', 0, 0, 0),
 (2, 2, 'Dull', 1, 'Strength', 1, 1, 1),
 (3, 2, 'Butter Knife', 2, 'dodge_chance', 1, 1, 1),
-(4, 2, 'of Viscosity', 3, 'dodge_chance', -1, 2, 1),
+(4, 2, 'Viscosity', 3, 'dodge_chance', -1, 2, 1),
 (5, 2, 'Punctual', 1, 'dodge_change', 1, 2, 1),
 (6, 3, 'N/A', 1, 'Strength', 0, 0, 0),
 (7, 4, 'N/A', 1, 'Strength', 0, 0, 0),
@@ -415,7 +568,27 @@ INSERT INTO `parts` (`part_id`, `type_id`, `name_modifier`, `name_position`, `st
 (36, 3, 'Curvaceous', 1, 'Dodge_chance', -2, 1, 3),
 (37, 4, 'Lollipop', 2, 'Strength', 3, 1, 3),
 (38, 4, 'Anti-Establishment', 1, 'Dodge_chance', 6, 1, 3),
-(39, 4, 'Questionable Sentience', 3, 'Defense', 5, 2, 3);
+(39, 4, 'Questionable Sentience', 3, 'Defense', 5, 2, 3),
+(40, 2, 'Arm of Arnold', 2, 'Strength', 8, 2, 4),
+(41, 2, 'Winning Smile', 2, 'Dodge_chance', 5, 1, 4),
+(42, 2, 'Raw Passion', 3, 'Defense', 4, 1, 4),
+(43, 2, 'Jammin', 1, 'Defense', 5, 1, 4),
+(44, 3, 'Overalls', 2, 'Defense', 6, 1, 4),
+(45, 3, 'Glam-oflauged', 1, 'Dodge_chance', 10, 2, 4),
+(46, 3, 'Extra Dubwubs', 3, 'Defense', 4, 2, 4),
+(47, 4, 'Vacation Home', 2, 'Dodge_chance', 20, 2, 4),
+(48, 4, 'Nam Flashback', 2, 'Strength', 15, 1, 4),
+(49, 4, 'Love and Devotion', 3, 'Defense', 5, 1, 4),
+(50, 5, 'Ted', 2, 'Strength', 500, 3, 1),
+(51, 5, 'Tap Danc-saur', 2, 'Dodge_chance', 20, 1, 2),
+(52, 5, 'Angry Forum Guy', 2, 'Defense', 3, 1, 3),
+(53, 5, 'Malnourished Database Entry', 2, 'Strength', 10, 1, 4),
+(54, 5, 'Serious Bane Voice', 3, 'Defense', 2, 1, 2),
+(56, 5, 'Chartreuse', 1, 'Dodge_chance', 3, 2, 2),
+(57, 5, 'Moonwalking', 1, 'Dodge_chance', 5, 2, 3),
+(58, 5, 'Smug Superiority', 3, 'Defense', 3, 1, 3),
+(59, 5, 'Bacon-Wrapped', 1, 'Strength', 5, 1, 4),
+(60, 5, 'Oprah-Level Generosity', 3, 'Defense', 5, 2, 4);
 
 -- --------------------------------------------------------
 
@@ -436,9 +609,9 @@ CREATE TABLE IF NOT EXISTS `players` (
 --
 
 INSERT INTO `players` (`player_id`, `equipped_item_id`, `name`, `exp_until_lvlup`, `battles_left`) VALUES
-(1, 26, 'Test', 1200, 10),
-(1, 32, 'Test', 1200, 10),
-(1, 39, 'Test', 1200, 10),
+(1, 52, 'Test', 800, 10),
+(1, 64, 'Test', 800, 10),
+(1, 74, 'Test', 800, 10),
 (2, 5, 'Sir Sirrington', 1200, 10),
 (2, 18, 'Sir Sirrington', 1200, 10),
 (2, 33, 'Sir Sirrington', 1200, 10),
@@ -451,18 +624,24 @@ INSERT INTO `players` (`player_id`, `equipped_item_id`, `name`, `exp_until_lvlup
 (5, 11, 'Sir Test of Testington', 1200, 10),
 (5, 20, 'Sir Test of Testington', 1200, 10),
 (5, 44, 'Sir Test of Testington', 1200, 10),
-(6, 34, 'Nancy the Bold', 300, 10),
-(6, 49, 'Nancy the Bold', 300, 10),
-(6, 52, 'Nancy the Bold', 300, 10),
+(6, 5, 'Nancy the Bold', 1200, 10),
+(6, 58, 'Nancy the Bold', 1200, 10),
+(6, 73, 'Nancy the Bold', 1200, 10),
 (7, 41, 'Such Test', 1200, 10),
 (7, 56, 'Such Test', 1200, 10),
 (7, 63, 'Such Test', 1200, 10),
-(8, 1, 'He Row', 100, 10),
-(8, 4, 'He Row', 100, 10),
-(8, 5, 'He Row', 100, 10),
-(9, 3, 'Some Fellow', 200, 10),
-(9, 13, 'Some Fellow', 200, 10),
-(9, 29, 'Some Fellow', 200, 10);
+(8, 50, 'He Row', 300, 10),
+(8, 57, 'He Row', 300, 10),
+(8, 65, 'He Row', 300, 10),
+(9, 48, 'Some Fellow', 200, 10),
+(9, 59, 'Some Fellow', 200, 10),
+(9, 72, 'Some Fellow', 200, 10),
+(10, 34, 'Bobby Cactus', 300, 10),
+(10, 49, 'Bobby Cactus', 300, 10),
+(10, 82, 'Bobby Cactus', 300, 10),
+(11, 54, 'She Row', 100, 10),
+(11, 70, 'She Row', 100, 10),
+(11, 77, 'She Row', 100, 10);
 
 --
 -- Indexes for dumped tables
@@ -518,7 +697,7 @@ ALTER TABLE `players`
 -- AUTO_INCREMENT for table `attribute_sets`
 --
 ALTER TABLE `attribute_sets`
-MODIFY `attributes_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=66;
+MODIFY `attributes_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=109;
 --
 -- AUTO_INCREMENT for table `item_types`
 --
@@ -528,12 +707,12 @@ MODIFY `type_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 -- AUTO_INCREMENT for table `monsters`
 --
 ALTER TABLE `monsters`
-MODIFY `monster_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=32;
+MODIFY `monster_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=73;
 --
 -- AUTO_INCREMENT for table `parts`
 --
 ALTER TABLE `parts`
-MODIFY `part_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=40;
+MODIFY `part_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=61;
 --
 -- Constraints for dumped tables
 --

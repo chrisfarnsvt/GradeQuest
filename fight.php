@@ -65,7 +65,7 @@
 	//if bonus from last turn (bonus val, but flag set to false), reset it
 	if(isset($_POST['battle_action'])){
 		$action = $_POST['battle_action'];
-		$monster_act = rand(0, 1);
+		$monster_act = mt_rand(0, 1);
 		
 		//is the player out of bonus stats? what about the monster?
 		if($_SESSION['player_mod_1'] == 0 && $_SESSION['player_mod_2'] == 0 && $_SESSION['player_mod_3'] == 0)
@@ -85,7 +85,7 @@
 			//attacks at least do 1 damage
 			$damage = max(($_SESSION['player_strength'] - $_SESSION['monster_defense'] + rand(-1 * $_SESSION['player_level'], 3 * $_SESSION['player_level'])), 1);
 			//monster might dodge			
-			$dodge = rand(1,100) - (2 * $_SESSION['monster_dodge']);
+			$dodge = mt_rand(1,100) - (2 * $_SESSION['monster_dodge']);
 			if ($dodge < 0) {
 				$damage = 0;
 				$_SESSION['text_log'] = $_SESSION['text_log'] . "<p class='player_action'>You missed.</p><br/><br/>";
@@ -135,7 +135,7 @@
 			}
 			$damage = max(($_SESSION['monster_strength'] - $_SESSION['player_defense'] + rand(-1 * $_SESSION['player_level'], 3 * $_SESSION['player_level'])), 1);
 			//player might dodge			
-			$dodge = rand(1,100) - (2 * $_SESSION['player_dodge']);
+			$dodge = mt_rand(1,100) - (2 * $_SESSION['player_dodge']);
 			if ($dodge < 0) {
 				$damage = 0;
 				$_SESSION['text_log'] = $_SESSION['text_log'] . "<p class='enemy_action'>Monster missed.</p><br/><br/>";

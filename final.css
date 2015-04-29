@@ -113,3 +113,33 @@ body {
 .scroll_table_width {
 	width: 100%;
 }
+
+option {
+	background-color: #444;
+	color: white;
+}
+
+input {
+	background-color: #666;
+	color: white;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+input[type=number] {
+	-moz-appearance: textfield;
+}
+
+input[type="checkbox"] {
+    display:none;
+}
+input[type="checkbox"] + label span {
+    display:inline-block;
+    width:19px;
+    height:19px;
+    background-color: #444;
+}

@@ -2,7 +2,7 @@
 //construct and insert a new (somewhat-randomized) monster
 function generate_monster($db, $level) {
 	$next_monster = next_monster_id($db);
-	$query = "SELECT p.part_id, p.name_modifier, p.name_position, p.rarity, p.type_id FROM parts p JOIN item_types i ON i.type_id = p.type_id WHERE p.level_required <= " . $level . " AND i.type_name = 'MONSTER' ORDER BY p.name_position, p.rarity DESC;";
+	$query = "SELECT p.part_id, p.name_modifier, p.name_position, p.rarity, p.type_id FROM parts p JOIN item_types i ON i.type_id = p.type_id WHERE p.level_required = " . $level . " AND i.type_name = 'MONSTER' ORDER BY p.name_position, p.rarity DESC;";
 	$result = $db->query($query);
 	if(!$result)
 		exit($query . " failed");
@@ -51,21 +51,21 @@ function get_monster_na_id($db) {
 
 //gets an array of three parts a monster could be made of
 function get_monster_parts($db, $level) {
-	$query = "SELECT p.part_id, p.name_position, p.rarity,  p.name_modifier FROM parts p JOIN item_types i ON p.type_id = i.type_id WHERE i.type_name = 'MONSTER' AND p.level_required <= " . $level . " AND p.name_modifier != 'N/A' ORDER BY p.name_position, p.rarity;";
+	$query = "SELECT p.part_id, p.name_position, p.rarity,  p.name_modifier FROM parts p JOIN item_types i ON p.type_id = i.type_id WHERE i.type_name = 'MONSTER' AND p.level_required = " . $level . " AND p.name_modifier != 'N/A' ORDER BY p.name_position, p.rarity DESC;";
 	$result = $db->query($query);
 	if(!$result)
 		exit($query . " failed");
 	$mod1 = 0;
 	$mod2 = 0; 
         $mod3 = 0;
-	$has_mod_1 = rand(0, 1);
+	$has_mod_1 = mt_rand(0, 1);
 	$has_mod_2 = true; //there's always modifier #2
-	$has_mod_3 = rand(0, 1);
+	$has_mod_3 = mt_rand(0, 1);
 	$result_array = array();
 	for ($i = 0; $i < $result->num_rows; $i++) {
 		$result->data_seek($i);
 		$row = $result->fetch_assoc();	
-		$check = rand(1, 100);
+		$check = mt_rand(1, 100);
 		if ($has_mod_1 && $row['name_position'] == 1) {
 			$test = (100 / $row['rarity']);
  			if ($check <= $test) { //success
@@ -123,6 +123,7 @@ function get_monster_name($db, $parts_arr) {
 			$name = $name . $row['name_modifier'] . " ";
 		}
 	}
+	$name = trim($name);
 	return $name;
 }
 ?>

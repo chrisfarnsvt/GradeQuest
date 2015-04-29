@@ -19,14 +19,14 @@ function generate_item($level, $type, $gendb) {
 	$part1 = 0;
 	$part2 = 0; 
         $part3 = 0;
-	$has_part_1 = rand(0, 1);
+	$has_part_1 = mt_rand(0, 1);
 	$has_part_2 = true; //there's always part number 2
-	$has_part_3 = rand(0, 1);
+	$has_part_3 = mt_rand(0, 1);
 	$name = '';
 	for ($i = 0; $i < $result->num_rows; $i++) {
 		$result->data_seek($i);
 		$row = $result->fetch_assoc();	
-		$check = rand(1, 100);
+		$check = mt_rand(1, 100);
 		if ($has_part_1 && $row['name_position'] == 1) {
 			$test = (100 / $row['rarity']);
  			if ($check <= $test) { //success

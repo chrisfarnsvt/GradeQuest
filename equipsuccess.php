@@ -60,6 +60,6 @@
 			}		
 		}
 ?>
-		<a href='battleground.php'><button class='submit'>Back</button></a>
+		<p>Well, that worked.</p><br/><a href='battleground.php'><button class='submit'>Back</button></a>
 	</body>
 </html>
